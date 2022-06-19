@@ -61,7 +61,7 @@ export class Game {
       "/assets/dev.png",
       this.scene
     );
-    const FLOOR_SIZE = 4;
+    const FLOOR_SIZE = 16;
 
     const ground = MeshBuilder.CreateTiledGround("ground1", {
       xmin: -FLOOR_SIZE, 
