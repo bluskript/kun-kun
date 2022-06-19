@@ -40,16 +40,20 @@ export class Game {
     this.camera.attachControl(canvas, true);
     this.player = new Player(this.scene, this.camera, this.keys);
 
-    const material2 = new BABYLON.StandardMaterial("material2", this.scene);
-    material2.diffuseTexture = new BABYLON.Texture(
-      "/assets/catnip.jpg",
+    const tiledTexture = new BABYLON.StandardMaterial("material2", this.scene);
+
+    tiledTexture.diffuseTexture = new BABYLON.Texture(
+      "/assets/dev.png",
       this.scene
     );
-    const ground = BABYLON.MeshBuilder.CreateGround(
-      "ground1",
-      { width: 60, height: 60, subdivisions: 2, updatable: false },
-      this.scene
-    );
+
+    const ground = BABYLON.MeshBuilder.CreateTiledBox("ground1", {
+      width: 24,
+      height: 0.1,
+      depth: 24,
+    }, this.scene);
+
+    ground.material = tiledTexture;
     ground.physicsImpostor = new BABYLON.PhysicsImpostor(
       ground,
       BABYLON.PhysicsImpostor.BoxImpostor,
@@ -59,7 +63,7 @@ export class Game {
       },
       this.scene
     );
-    ground.material = material2;
+    ground.material = tiledTexture;
     this.engine.runRenderLoop(() => {
       const forwardDirection = this.camera.getDirection(
         BABYLON.Vector3.Forward()
