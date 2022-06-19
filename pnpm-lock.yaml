@@ -1,6 +1,7 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 specifiers:
+  '@types/cannon': ^0.1.8
   babylonjs: ^5.11.0
   cannon: ^0.6.2
   solid-js: ^1.4.2
@@ -16,6 +17,7 @@ dependencies:
   solid-js: 1.4.2
 
 devDependencies:
+  '@types/cannon': 0.1.8
   typescript: 4.6.4
   vite: 2.9.9
   vite-plugin-solid: 2.2.6
@@ -387,6 +389,10 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@types/cannon/0.1.8:
+    resolution: {integrity: sha512-aabgPL9ho1Qov3mMnBJCTG+vTWhFrhRi/5INwsZCPhf3BwabRWz53ryffCDzRSlV4T0f4eQS0OQo5Y/RCZsngQ==}
     dev: true
 
   /@windicss/config/1.8.4:
