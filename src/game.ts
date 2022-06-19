@@ -52,7 +52,7 @@ export class Game {
       this.scene,
       true
     );
-    // this.camera.attachControl(canvas, true);
+    this.camera.attachControl(canvas, true);
     this.player = new Player(this.scene, this.camera, this.keys);
 
     const tiledTexture = new StandardMaterial("material2", this.scene);
@@ -61,11 +61,17 @@ export class Game {
       "/assets/dev.png",
       this.scene
     );
+    const FLOOR_SIZE = 4;
 
-    const ground = MeshBuilder.CreateTiledBox("ground1", {
-      width: 24,
-      height: 0.1,
-      depth: 24,
+    const ground = MeshBuilder.CreateTiledGround("ground1", {
+      xmin: -FLOOR_SIZE, 
+      zmin: -FLOOR_SIZE, 
+      xmax: FLOOR_SIZE, 
+      zmax: FLOOR_SIZE,
+      subdivisions: {
+        w: FLOOR_SIZE,
+        h: FLOOR_SIZE,
+      },
     }, this.scene);
 
     ground.material = tiledTexture;
@@ -80,10 +86,6 @@ export class Game {
     );
     ground.material = tiledTexture;
     this.engine.runRenderLoop(() => {
-      const forwardDirection = this.camera.getDirection(
-        Vector3.Forward()
-      );
-      const rightDirection = this.camera.getDirection(Vector3.Right());
       this.player.update();
       this.scene.render();
     });
