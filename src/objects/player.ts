@@ -1,17 +1,23 @@
-import * as BABYLON from "babylonjs";
+import {
+  Mesh,
+  Scene,
+  CreateBox,
+  Vector3,
+  PhysicsImpostor,
+} from "babylonjs";
 import { ArcRotateCamera } from "babylonjs";
 import { KeyManager } from "../lib/keyManager";
 
 export class Player {
-  public mesh: BABYLON.Mesh;
+  public mesh: Mesh;
 
   public constructor(
-    private scene: BABYLON.Scene,
+    private scene: Scene,
     private camera: ArcRotateCamera,
     private keys: KeyManager,
     id?: string
   ) {
-    this.mesh = BABYLON.CreateBox(
+    this.mesh = CreateBox(
       `player_${id}`,
       {
         size: 1,
@@ -21,10 +27,10 @@ export class Player {
       },
       scene
     );
-    this.mesh.position = new BABYLON.Vector3(0, 7.27, 0);
-    this.mesh.physicsImpostor = new BABYLON.PhysicsImpostor(
+    this.mesh.position = new Vector3(0, 7.27, 0);
+    this.mesh.physicsImpostor = new PhysicsImpostor(
       this.mesh,
-      BABYLON.PhysicsImpostor.BoxImpostor,
+      PhysicsImpostor.BoxImpostor,
       {
         mass: 1,
         restitution: 0.35,
@@ -35,16 +41,16 @@ export class Player {
   }
 
   // This makes it so the player can't against the camera into the world
-  public clamp3DVectorTo2DMovement(vector: BABYLON.Vector3) {
+  public clamp3DVectorTo2DMovement(vector: Vector3) {
     vector.y = 0;
     return vector;
   }
 
   public update() {
     const forwardDirection = this.camera.getDirection(
-      BABYLON.Vector3.Forward()
+      Vector3.Forward()
     );
-    const rightDirection = this.camera.getDirection(BABYLON.Vector3.Right());
+    const rightDirection = this.camera.getDirection(Vector3.Right());
 
     // Note to blusk from blusk:
     //    dont try to put this in an object
