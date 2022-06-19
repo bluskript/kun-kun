@@ -27,7 +27,7 @@ export class Player {
       BABYLON.PhysicsImpostor.BoxImpostor,
       {
         mass: 1,
-        restitution: 0.9,
+        restitution: 0.35,
       },
       this.scene
     );

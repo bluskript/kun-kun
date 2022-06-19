@@ -47,7 +47,7 @@ export class Game {
     );
     const ground = BABYLON.MeshBuilder.CreateGround(
       "ground1",
-      { width: 6, height: 6, subdivisions: 2, updatable: false },
+      { width: 60, height: 60, subdivisions: 2, updatable: false },
       this.scene
     );
     ground.physicsImpostor = new BABYLON.PhysicsImpostor(
