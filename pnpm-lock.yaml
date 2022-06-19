@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   babylonjs: ^5.11.0
+  cannon: ^0.6.2
   solid-js: ^1.4.2
   typescript: ^4.6.4
   vite: ^2.9.9
@@ -11,6 +12,7 @@ specifiers:
 
 dependencies:
   babylonjs: 5.11.0
+  cannon: 0.6.2
   solid-js: 1.4.2
 
 devDependencies:
@@ -464,6 +466,10 @@ packages:
   /caniuse-lite/1.0.30001320:
     resolution: {integrity: sha512-MWPzG54AGdo3nWx7zHZTefseM5Y1ccM7hlQKHRqJkPozUaw3hNbBTMmLn16GG2FUzjR13Cr3NPfhIieX5PzXDA==}
     dev: true
+
+  /cannon/0.6.2:
+    resolution: {integrity: sha512-n/7wWSXr8KOSvjad2x0fJHgpMepKjOKi+NdSnjfYyijoDBZnp4JQKgPcpv28jlXoWM+N9zVYU09J0A6Qxx+Y7w==}
+    dev: false
 
   /chalk/2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}

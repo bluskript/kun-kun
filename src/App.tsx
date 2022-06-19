@@ -8,7 +8,7 @@ const App: Component = () => {
 
   return (
     <div id="viewport">
-      <canvas ref={canvasElement!}></canvas>
+      <canvas touch-action="none" ref={canvasElement!}></canvas>
     </div>
   );
 };

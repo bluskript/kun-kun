@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "babylonjs": "^5.11.0",
+    "cannon": "^0.6.2",
     "solid-js": "^1.4.2"
   }
 }
