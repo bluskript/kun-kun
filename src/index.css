@@ -1,0 +1,7 @@
+html,
+body,
+#root,
+#viewport,
+#viewport > canvas {
+  @apply w-full h-full;
+}
